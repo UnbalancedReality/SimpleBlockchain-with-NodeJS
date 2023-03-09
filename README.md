@@ -9,3 +9,8 @@ Features:
 5. The LevelDB library stores the block's and transaction information.
 6. A basic private-public wallet is created by using the Elliptic-Curve library, which makes private and public key combinations.
 7. An API is included by using the HTTP service, and the Express and Body-Parser libraries. The following commands can be used: blocks, getBlock, getDBBlock, and getWallet. The Block command displays all the blocks in the chain. the GetBlock command displays a block with a specific index. The getWallet command displays the wallet information. 
+
+
+---Changelog---
+
+1.0.1- Added functionality and compatibility for Windows 11.
