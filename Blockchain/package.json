@@ -1,0 +1,10 @@
+{
+  "name": "Simple-Blockchain-with-NodeJS",
+  "version": "1.0.1",
+  "main": "P2P.js",
+  "repository": "https://github.com/UnbalancedReality/SimpleBlockchain-with-NodeJS",
+  "type": "module",
+  "author": "Noah Stevens",
+  "license": "MIT",
+  "private": false
+}

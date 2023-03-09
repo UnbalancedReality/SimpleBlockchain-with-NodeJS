@@ -1,14 +1,14 @@
-const crypto = require('crypto');
-const Swarm = require('discovery-swarm');
-const defaults = require('dat-swarm-defaults');
-const getPort = require('get-port');
-const chain = require("./chain");
-//const { join } = require('path');
-const CronJob = require('cron').CronJob;
-const express = require("express");
-const bodyParser = require('body-parser');
-const wallet = require('./wallet');
-const fs = require('fs');
+import crypto from 'crypto';
+import Swarm from 'discovery-swarm';
+import defaults from 'dat-swarm-defaults';
+import getPort from 'get-port';
+import chain from "./Chain.cjs";
+const { join } = import('path');
+import {CronJob} from 'cron';
+import express from 'express';
+import bodyParser from 'body-parser';
+const wallet = import('./wallet.cjs');
+const fs = import('fs');
 
 const peers = {};
 let connSeq = 0;
@@ -189,7 +189,7 @@ setTimeout(function(){
     writeMessageToPeers('hello', null);
 }, 10000);
 //writeMessageToPeers sends messages to all connected peers
-writeMessageToPeers = (type, data) => {
+const writeMessageToPeers = (type, data) => {
     for(let id in peers) {
         console.log('---- writeMessageToPeers start----');
         console.log('type: ' + type + ', to: ' + id);
@@ -199,7 +199,7 @@ writeMessageToPeers = (type, data) => {
 };
 
 //writeMessageToPeerToId sends a message to a specific peerId
-writeMessageToPeerToId = (toId, type, data) => {
+const writeMessageToPeerToId = (toId, type, data) => {
     for(let id in peers) {
         if(id === toId) {
             console.log('----writeMessageToPeerToId start----');
@@ -216,7 +216,7 @@ writeMessageToPeerToId = (toId, type, data) => {
     data: any data shared on the P2P Network
 */
 
-sendMessage = (id, type, data) => {
+const sendMessage = (id, type, data) => {
     peers[id].conn.write(JSON.stringify({
         to: id,
         from: myPeerId,
